@@ -1,0 +1,44 @@
+@model Inscrever
+@{
+    ViewData["Title"] = "Matricula";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST" asp-action="Cadastro">
+    <p>
+        <label>Nome:</label>
+        <input type="text" asp-for="Nome" required="required">
+    </p>
+
+    <p>
+
+        <label>Modalidade:</label>
+        <select asp-for="Modalidade">
+            <option value="musculação">Musculação</option>
+            <option value="jump">Jump</option>
+            <option value="zumba">Zumba</option>
+
+        </select>
+    </p>
+    <p>
+
+<label>Idade: (mínimo 14 anos)</label>
+        <input type="number" asp-for="Idade" required="required">
+
+    </p>
+
+<input type="submit" value="Inscrever-se">
+
+
+<style>
+body{
+    background-color: whitesmoke;
+}
+
+</style>
+
+</form>
+
+<p>
+    @ViewBag.Mensagem
+</p>

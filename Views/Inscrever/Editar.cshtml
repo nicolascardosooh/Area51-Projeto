@@ -1,0 +1,47 @@
+@model Inscrever
+@{
+    ViewData["Title"] = "Editar";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST" asp-action="Editar">
+
+<input type="hidden" asp-for="Id">
+
+    <p>
+        <label>Nome:</label>
+        <input type="text" asp-for="Nome" required="required">
+    </p>
+
+    <p>
+
+        <label>Modalidade:</label>
+        <select asp-for="Modalidade">
+            <option value="musculação">Musculação</option>
+            <option value="jump">Jump</option>
+            <option value="zumba">Zumba</option>
+
+        </select>
+    </p>
+    <p>
+
+<label>Idade: (mínimo 14 anos)</label>
+        <input type="number" asp-for="Idade" required="required">
+
+    </p>
+
+<input type="submit" value="Salvar Edição">
+
+
+<style>
+body{
+    background-color: whitesmoke;
+}
+
+</style>
+
+</form>
+
+<p>
+    @ViewBag.Mensagem
+</p>
